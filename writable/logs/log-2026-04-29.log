@@ -1,0 +1,4 @@
+CRITICAL - 2026-04-29 12:32:36 --> ErrorException: Cannot redeclare App\Controllers\Admin::index()
+[Method: GET, Route: admin]
+in APPPATH\Controllers\Admin.php on line 19.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

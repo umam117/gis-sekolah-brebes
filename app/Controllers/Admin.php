@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Controllers;
+
+class Admin extends BaseController
+{
+    public function index()
+    {
+        $data = [
+           'judul' => 'Dashboard',
+           'page' => 'v_dashboard',
+        ];
+        return view('v_template_back_end', $data);
+    }
+
+    
+    public function Setting()
+    {
+        $data = [
+           'judul' => 'Setting',
+           'page' => 'v_setting',
+        ];
+        return view('v_template_back_end', $data);
+    }
+}
