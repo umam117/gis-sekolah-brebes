@@ -20,6 +20,6 @@ class Admin extends BaseController
            'judul' => 'Setting',
            'page' => 'v_setting',
         ];
-        return view('v_template_back_end', $data);
+        return view('v_template_back_end', $data);  
     }
 }

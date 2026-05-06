@@ -19,7 +19,7 @@ $routes->set404Override();
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
 // Set $autoRoutesImproved to true in app/Config/Feature.php and set the following to true.
-$routes->setAutoRoute(true);
+$routes->setAutoRoute(false);
 
 /*
  * --------------------------------------------------------------------
@@ -34,7 +34,7 @@ $routes->get('admin','Admin::index');
 $routes->get('Admin','Admin::index');
 $routes->get('admin/setting','Admin::Setting');
 $routes->get('Admin/Setting','Admin::Setting');
-$routes->post('Admin/IpdateSetting','Admin::UpdateSetiing');
+$routes->post('Admin/UpdateSetting','Admin::UpdateSetiing');
 
 
 
