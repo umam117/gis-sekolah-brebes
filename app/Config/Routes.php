@@ -35,6 +35,9 @@ $routes->get('Admin','Admin::index');
 $routes->get('admin/setting','Admin::Setting');
 $routes->get('Admin/Setting','Admin::Setting');
 $routes->post('Admin/UpdateSetting','Admin::UpdateSetiing');
+$routes->get('Wilayah', 'Wilayah::index');
+
+
 
 
 
