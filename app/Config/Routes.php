@@ -36,6 +36,11 @@ $routes->get('admin/setting','Admin::Setting');
 $routes->get('Admin/Setting','Admin::Setting');
 $routes->post('Admin/UpdateSetting','Admin::UpdateSetiing');
 $routes->get('Wilayah', 'Wilayah::index');
+$routes->get('Wilayah/Input', 'Wilayah::input');
+$routes->post('Wilayah/Simpan', 'Wilayah::simpan');
+$routes->get('Wilayah/Edit/(:num)', 'Wilayah::edit/$1');
+$routes->post('Wilayah/Update/(:num)', 'Wilayah::update/$1');
+$routes->get('Wilayah/Delete/(:num)', 'Wilayah::delete/$1');
 
 
 
