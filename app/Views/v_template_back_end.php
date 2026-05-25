@@ -148,18 +148,20 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="<?= base_url('Jenjang') ?>" class="nav-link <?= $menu == 'senjang' ? 'active' : '' ?>"> 
-                            <i class="nav-icon fas fa-swimming-pool"></i>
+                        <a href="<?= base_url('Jenjang') ?>" class="nav-link <?= $menu == 'jenjang' ? 'active' : '' ?>"> 
+                            <i class="nav-icon fas fa-graduation-cap"></i>
                             <p>Jenjang</p>
                         </a>
                     </li>
 
+
                     <li class="nav-item">
-                        <a href="<?= base_url('Admin/Setting') ?>" class="nav-link <?= $menu == '' ? 'active' : '' ?>">
+                        <a href="<?= base_url('admin/setting') ?>" class="nav-link <?= $menu == 'setting' ? 'active' : '' ?>">
                             <i class="nav-icon fas fa-cogs"></i>
                             <p>Setting</p>
                         </a>
                     </li>
+
 
                 </ul>
 

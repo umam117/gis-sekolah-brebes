@@ -41,6 +41,9 @@ $routes->post('Wilayah/Simpan', 'Wilayah::simpan');
 $routes->get('Wilayah/Edit/(:num)', 'Wilayah::edit/$1');
 $routes->post('Wilayah/Update/(:num)', 'Wilayah::update/$1');
 $routes->get('Wilayah/Delete/(:num)', 'Wilayah::delete/$1');
+$routes->get('User', 'User::index');
+$routes->get('Sekolah', 'Sekolah::index');
+$routes->get('Jenjang', 'Jenjang::index');
 
 
 
