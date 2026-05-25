@@ -44,6 +44,8 @@ $routes->get('Wilayah/Delete/(:num)', 'Wilayah::delete/$1');
 $routes->get('User', 'User::index');
 $routes->get('Sekolah', 'Sekolah::index');
 $routes->get('Jenjang', 'Jenjang::index');
+$routes->post('Jenjang/UpdateMarker', 'Jenjang::UpdateData');
+
 
 
 

@@ -11,4 +11,11 @@ class ModelJenjang extends Model
         return $this->db->table('tbl_jenjang')
             ->get()->getResultArray();
     }
+
+    public function updateMarker($id, $data)
+    {
+        return $this->db->table('tbl_jenjang')
+            ->where('id_jenjang', $id)
+            ->update($data);
+    }
 }
