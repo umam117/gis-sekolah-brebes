@@ -18,6 +18,7 @@ class Wilayah extends BaseController
     {
         $data = [
             'judul'   => 'Wilayah',
+            'menu'  => 'wilayah',
             'page'    => 'wilayah/v_index',
             'wilayah' => $this->ModelWilayah->AllData(),
         ];
@@ -28,6 +29,7 @@ class Wilayah extends BaseController
     {
         $data = [
             'judul' => 'Input Data Wilayah',
+            'menu'  => 'wilayah',
             'page'  => 'wilayah/v_input',
         ];
         return view('v_template_back_end', $data);
@@ -70,6 +72,7 @@ class Wilayah extends BaseController
 
         $data = [
             'judul'   => 'Edit Data Wilayah',
+            'menu'  => 'wilayah',
             'page'    => 'wilayah/v_edit',
             'wilayah' => $wilayah,
         ];
