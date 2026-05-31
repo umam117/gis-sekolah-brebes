@@ -2,8 +2,14 @@
 
 namespace App\Controllers;
 
+use App\Models\ModelSetting;
+
 class Admin extends BaseController
 {
+    public function __construct()
+    {
+        $this->ModelSetting = new ModelSetting();
+    }
     public function index()
     {
         $data = [
@@ -21,6 +27,7 @@ class Admin extends BaseController
            'judul' => 'Setting',
            'menu'  => 'setting',
            'page' => 'v_setting',
+           'web' => $this->ModelSetting->Dataweb(),
         ];
         return view('v_template_back_end', $data);  
     }

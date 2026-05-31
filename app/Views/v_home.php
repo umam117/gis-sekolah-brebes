@@ -32,8 +32,8 @@ attribution:'© CARTO'
 
 // Tampilkan map awal
 var map = L.map('map',{
-center: [-7.100963713548391, 108.92595789338426],
-zoom: 10,
+center: [<?= $web['coordinat_wilayah']?>],
+zoom: <?= $web['zoom_view']?>,
 layers:[peta1]
 });
 
@@ -47,4 +47,16 @@ var baseMaps = {
 };
 
  var layerControl = L.control.layers(baseMaps).addTo(map);
+
+     <?php foreach ($wilayah as $key => $value) { ?>
+        L.geoJSON(<?= $value['geojson'] ?? '{}' ?>, {
+            fillColor: '<?= $value['warna'] ?? '#3388ff' ?>',
+            fillOpacity: 0.5,
+        })
+        .bindPopup("<b><?= $value['nama_wilayah'] ?? 'Tanpa Nama' ?></b>")
+        .addTo(map);
+    <?php } ?>
+</script>
+
+
 </script>

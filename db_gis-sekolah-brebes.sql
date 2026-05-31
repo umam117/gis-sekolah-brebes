@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 23, 2026 at 09:49 AM
+-- Generation Time: May 31, 2026 at 10:02 AM
 -- Server version: 8.0.45
 -- PHP Version: 8.5.6
 
@@ -32,6 +32,16 @@ CREATE TABLE `tbl_jenjang` (
   `jenjang` varchar(50) DEFAULT NULL,
   `marker` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl_jenjang`
+--
+
+INSERT INTO `tbl_jenjang` (`id_jenjang`, `jenjang`, `marker`) VALUES
+(1, 'TK', 'tk.png'),
+(2, 'SD', '1780205125_6746aea4ea0c243ac326.png'),
+(3, 'SMP', 'smp.png'),
+(4, 'SMA', 'sma.png');
 
 -- --------------------------------------------------------
 
@@ -7697,8 +7707,17 @@ CREATE TABLE `tbl_sekolah` (
   `alamat` text,
   `id_provinsi` int DEFAULT NULL,
   `id_kabupaten` int DEFAULT NULL,
-  `id_kecamatan` int DEFAULT NULL
+  `id_kecamatan` int DEFAULT NULL,
+  `id_wilayah` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl_sekolah`
+--
+
+INSERT INTO `tbl_sekolah` (`id_sekolah`, `id_jenjang`, `nama_sekolah`, `akreditasi`, `status`, `coordinat`, `foto`, `alamat`, `id_provinsi`, `id_kabupaten`, `id_kecamatan`, `id_wilayah`) VALUES
+(1, 2, 'SD Negeri Negaradaha 04', 'B', 'Negeri', '-7.2701799,108.8733182,', NULL, 'Jl. Krajan, Negaradaha,', NULL, NULL, NULL, 2),
+(2, 2, 'SDIT BINAUL IZZAH BUMIAYU', 'A', 'Swasta', '-7.2694392,108.8733168', NULL, 'Jl. Karangjati, Kalierang, ', NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -7819,13 +7838,13 @@ ALTER TABLE `tbl_wilayah`
 -- AUTO_INCREMENT for table `tbl_jenjang`
 --
 ALTER TABLE `tbl_jenjang`
-  MODIFY `id_jenjang` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_jenjang` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_sekolah`
 --
 ALTER TABLE `tbl_sekolah`
-  MODIFY `id_sekolah` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_sekolah` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_setting`

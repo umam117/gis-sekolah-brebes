@@ -11,20 +11,13 @@ use Psr\Log\LoggerInterface;
 
 /**
  * Class BaseController
- *
- * BaseController provides a convenient place for loading components
- * and performing functions that are needed by all your controllers.
- * Extend this class in any new controllers:
- *     class Home extends BaseController
- *
- * For security be sure to declare any new methods as protected or private.
  */
 abstract class BaseController extends Controller
 {
     /**
      * Instance of the main Request object.
      *
-     * @var CLIRequest|IncomingRequest
+     * @var IncomingRequest|CLIRequest
      */
     protected $request;
 
@@ -33,12 +26,12 @@ abstract class BaseController extends Controller
      * class instantiation. These helpers will be available
      * to all other controllers that extend BaseController.
      *
-     * @var list<string>
+     * @var array
      */
     protected $helpers = ['form'];
 
     /**
-     * Be sure to declare properties for any property fetch you initialized.
+     * Be sure to declare properties for any property fetch you initialize.
      * The creation of dynamic property is deprecated in PHP 8.2.
      */
     // protected $session;
@@ -51,8 +44,8 @@ abstract class BaseController extends Controller
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 
-        // Preload any models, libraries, etc, here.
+        // Preload any models, libraries, etc. here.
 
-        // E.g.: $this->session = service('session');
+        // E.g.: $this->session = \Config\Services::session();
     }
 }

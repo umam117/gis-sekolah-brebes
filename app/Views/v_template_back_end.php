@@ -209,12 +209,17 @@
 
                 <div class="row">
 
-                    <?php
-                    if ($page) {
-                        echo view($page);
-                    }
-                    ?>
-
+<?php
+if (isset($page)) {
+    // Kita buat array baru untuk membungkus variabel $sekolah 
+    // dan melemparkannya secara paksa ke dalam sub-view
+    echo view($page, [
+        'judul'   => $judul ?? '',
+        'menu'    => $menu ?? '',
+        'sekolah' => $sekolah ?? [] // <-- Ini yang melempar data sekolah Anda ke v_index
+    ]);
+}
+?>
                 </div>
 
             </div>
@@ -240,9 +245,18 @@
 
 </div>
 <script>
-    $(function () {
-        $('#example1').DataTable();
-    });
+  $(function () {
+    if (!$.fn.DataTable.isDataTable('#example1')) {
+        $("#example1").DataTable({
+            "responsive": true, 
+            "lengthChange": true, 
+            "autoWidth": false,
+            "paging": true,
+            "searching": true,
+            "ordering": true
+        });
+    }
+  });
 </script>
 
 </body>
