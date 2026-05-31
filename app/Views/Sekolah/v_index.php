@@ -40,13 +40,14 @@
                 </div>
             <?php endif; ?>
 
-            <!-- Tabel HTML Pas 4 Kolom -->
             <table id="example1" class="table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
                         <th width="50px" class="text-center">No</th>
                         <th class="text-center">Nama Sekolah</th>
-                        <th width="150px" class="text-center">Status</th>
+                        <th width="100px" class="text-center">Status</th>
+                        <th width="100px" class="text-center">Akreditasi</th>
+                        <th class="text-center">Alamat</th>
                         <th width="150px" class="text-center">Aksi</th>
                     </tr>
                 </thead>
@@ -56,34 +57,27 @@
                     if (!empty($sekolah) && is_array($sekolah)) :
                         foreach ($sekolah as $key => $value) : ?>
                             <tr>
-                                <!-- Kolom 1: Nomor -->
                                 <td class="text-center"><?= $no++; ?></td>
-                                
-                                <!-- Kolom 2: Nama Sekolah -->
                                 <td><?= $value['nama_sekolah'] ?></td>
-                                
-                                <!-- Kolom 3: Status -->
-                                <td><?= $value['status'] ?></td>
-                                
-                                <!-- Kolom 4: Aksi (Huruf Akreditasi + Tombol Kuning & Merah) -->
-                                <td>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span><?= $value['akreditasi'] ?></span>
-                                        <div>
-                                            <a href="<?= base_url('Sekolah/Edit/' . $value['id_sekolah']) ?>" class="btn btn-sm btn-flat btn-warning" title="Edit Data">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-                                            <a href="<?= base_url('Sekolah/Delete/' . $value['id_sekolah']) ?>" class="btn btn-sm btn-flat btn-danger" onclick="return confirm('Yakin ingin menghapus data sekolah ini?')" title="Hapus Data">
-                                                <i class="fas fa-trash"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                                <td class="text-center"><?= $value['status'] ?></td>
+                                <td class="text-center"><?= $value['akreditasi'] ?></td>
+                                <td><?= $value['alamat'] ?></td>
+                                <td class="text-center">
+                                    <a href="<?= base_url('Sekolah/Detail/' . $value['id_sekolah']) ?>" class="btn btn-sm btn-flat btn-info" title="Detail Data">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="<?= base_url('Sekolah/Edit/' . $value['id_sekolah']) ?>" class="btn btn-sm btn-flat btn-warning" title="Edit Data">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a href="<?= base_url('Sekolah/Delete/' . $value['id_sekolah']) ?>" class="btn btn-sm btn-flat btn-danger" onclick="return confirm('Yakin ingin menghapus data sekolah ini?')" title="Hapus Data">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
                     <?php else : ?>
                         <tr>
-                            <td colspan="4" class="text-center text-muted">Data sekolah tidak tersedia di database.</td>
+                            <td colspan="6" class="text-center text-muted">Data sekolah tidak tersedia di database.</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>
@@ -92,7 +86,6 @@
     </div>
 </div>
 
-<!-- Script DataTables Tetap Dipertahankan -->
 <script>
   $(function () {
     if (!$.fn.DataTable.isDataTable('#example1')) {
@@ -107,4 +100,3 @@
     }
   });
 </script>
-
