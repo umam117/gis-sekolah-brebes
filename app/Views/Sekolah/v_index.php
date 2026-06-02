@@ -48,6 +48,7 @@
                         <th width="100px" class="text-center">Status</th>
                         <th width="100px" class="text-center">Akreditasi</th>
                         <th class="text-center">Alamat</th>
+                        <th class="text-center">Foto</th>
                         <th width="150px" class="text-center">Aksi</th>
                     </tr>
                 </thead>
@@ -62,6 +63,7 @@
                                 <td class="text-center"><?= $value['status'] ?></td>
                                 <td class="text-center"><?= $value['akreditasi'] ?></td>
                                 <td><?= $value['alamat'] ?></td>
+                                <td class="text-center"><img src="<?= base_url('foto/' . $value['foto']) ?>" width="150px" height="100px"></td>
                                 <td class="text-center">
                                     <a href="<?= base_url('Sekolah/Detail/' . $value['id_sekolah']) ?>" class="btn btn-sm btn-flat btn-info" title="Detail Data">
                                         <i class="fas fa-eye"></i>
