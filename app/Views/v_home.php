@@ -57,6 +57,3 @@ var baseMaps = {
         .addTo(map);
     <?php } ?>
 </script>
-
-
-</script>

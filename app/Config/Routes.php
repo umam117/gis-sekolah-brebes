@@ -45,7 +45,9 @@ $routes->get('User', 'User::index');
 $routes->get('Sekolah', 'Sekolah::index');
 $routes->get('Jenjang', 'Jenjang::index');
 $routes->post('Jenjang/UpdateMarker', 'Jenjang::UpdateData');
-
+$routes->get('Sekolah', 'Sekolah::index');
+$routes->get('Sekolah/Input', 'Sekolah::Input');
+$routes->get('Sekolah', 'Sekolah::input');
 
 
 
